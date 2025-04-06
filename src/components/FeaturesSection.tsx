@@ -32,17 +32,17 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section className="w-full py-12 md:py-24 bg-gray-50">
+    <section className="w-full py-16 md:py-24 bg-black/50">
       <div className="container mx-auto px-6 md:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">How SnackGPT Works</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">How SnackGPT Works</h2>
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Roast your food, get personalized meal plans, and have fun with your diet.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="animate-fade-in" style={{ animationDelay: `${0.1 * index}s` }}>
+            <div key={index} className="animate-slide-up" style={{ animationDelay: `${0.1 * index}s` }}>
               <FeatureCard 
                 icon={feature.icon} 
                 title={feature.title} 
