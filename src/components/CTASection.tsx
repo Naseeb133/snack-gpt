@@ -30,8 +30,26 @@ const CTASection = () => {
         </p>
         
         <div className="max-w-2xl mx-auto animate-slide-up bg-black/40 p-4 rounded-xl border border-white/10" style={{ animationDelay: "0.2s" }}>
-          <iframe 
-            data-tally-src="https://tally.so/r/your-form-id" 
+          <iframe data-tally-src="https://tally.so/embed/3jzKPR?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
+        loading="lazy" 
+        width="100%" 
+        height="717" 
+        frameborder="0" 
+        marginheight="0" 
+        marginwidth="0" 
+        title="SnackGPT Waitlist">
+</iframe>
+<script>
+  var d = document, 
+      w = "https://tally.so/widgets/embed.js", 
+      v = function() {
+        if (typeof Tally !== "undefined") Tally.loadEmbeds();
+        else d.querySelectorAll("iframe[data-tally-src]:not([src])")
+          .forEach(function(e) { e.src = e.dataset.tallySrc });
+      };
+  if (typeof Tally !== "undefined") v();
+  else if (d.querySelector('script
+
             width="100%" 
             height="500" 
             frameBorder="0" 
