@@ -1,7 +1,23 @@
 
 import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
 
 const CTASection = () => {
+  useEffect(() => {
+    // This will load the Tally embed script
+    const script = document.createElement("script");
+    script.src = "https://tally.so/widgets/embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup script on component unmount
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
   return (
     <section className="w-full py-16 md:py-24 bg-gradient-to-r from-dark to-black relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(249,115,22,0.15),transparent)] pointer-events-none"></div>
@@ -10,19 +26,20 @@ const CTASection = () => {
           Ready to get roasted?
         </h2>
         <p className="text-xl text-gray-300 mb-8 max-w-xl mx-auto animate-slide-up" style={{ animationDelay: "0.1s" }}>
-          SnackGPT launches soon. Be first to roast your meals and fix your plate.
+          Sign up to be the first to experience SnackGPT.
         </p>
-        <div className="max-w-md mx-auto animate-slide-up" style={{ animationDelay: "0.2s" }}>
-          <div className="flex flex-col sm:flex-row items-center gap-4">
-            <input 
-              type="email" 
-              placeholder="Enter your email" 
-              className="w-full px-4 py-3 rounded-lg border border-white/20 bg-dark focus:outline-none focus:ring-2 focus:ring-primary text-white"
-            />
-            <Button size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white">
-              Join the Waitlist
-            </Button>
-          </div>
+        
+        <div className="max-w-2xl mx-auto animate-slide-up bg-black/40 p-4 rounded-xl border border-white/10" style={{ animationDelay: "0.2s" }}>
+          <iframe 
+            data-tally-src="https://tally.so/r/your-form-id" 
+            width="100%" 
+            height="500" 
+            frameBorder="0" 
+            marginHeight="0" 
+            marginWidth="0" 
+            title="SnackGPT Waitlist"
+            className="rounded-lg"
+          ></iframe>
           <p className="text-sm text-gray-400 mt-3">
             No spam, just snacks. We'll notify you when we launch.
           </p>
