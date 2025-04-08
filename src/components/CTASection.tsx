@@ -33,8 +33,10 @@ const CTASection = () => {
           <iframe 
             data-tally-src="https://tally.so/r/your-form-id" 
             width="100%" 
-            height={500} 
-            frameBorder={0} 
+            height="500" 
+            frameBorder="0" 
+            marginHeight="0" 
+            marginWidth="0" 
             title="SnackGPT Waitlist"
             className="rounded-lg"
           ></iframe>
